@@ -1,0 +1,73 @@
+                         Hypothesis 
+
+A hypothesis is an idea or explanation that you then test through study and experimentation. Outside science, a theory or guess can also be called a hypothesis. A hypothesis is something more than a wild guess but less than a well-established theory.(it is a claim)
+1)Null Hypothesis (H0, read "H zero"): states that all things remain equal. No phenomena is observed or there is not relationship between what you are comparing;
+2)Alternative Hypothesis (H1, read “H one”): states the opposite of the Null Hypothesis. That there was some change, or observed relationship between what you are comparing
+1. Null Hypothesis:
+                 The null hypothesis assumes there is ‘no effect’ or ‘relationship’ by default.
+example: jab phool mai paani daalte hai to uski growth aur paani ka relation nii hai...means koi relationship nii
+         hai
+
+2. The alternate hypothesis (HA) :
+                       is always framed to negate the null hypothesis. The corresponding HA for above tests are as follows:
+Welch Two Sample t-Test: The true difference in means of two samples is NOT equal to 0
+Linear Regression: The beta coefficient(slope) of the X variable is NOT zero
+Chi Square test: The difference between expected frequencies and observed frequencies is NOT zero.
+
+what is p Value:
+         the probability of seeing the effect(E) when the null hypothesis is true.P value is a statistical measure that helps scientists determine whether or not their hypotheses are correc
+
+But how low is ‘low enough’ for rejecting the null hypothesis?
+This level of ‘low enough’ cutoff is called the alpha level, and you need to decide it before conducting a statistical test.en the p-value is low enough, we reject the null hypothesis and conclude the observed effect holds.
+
+Alpha Level:
+   It is the cutoff probability for p-value to establish statistical significance for a given hypothesis test.
+For an observed effect to be considered as statistically significant, the p-value of the test should be lower than the pre-decided alpha value.
+
+Typically for most statistical tests(but not always), alpha is set as 0.05.
+if the P value of a data set is below a certain pre-determined amount (like, for instance, 0.05), scientists will reject the "null hypothesis" of their experiment - in other words, they'll rule out the hypothesis that the variables of their experiment had no meaningful effect on the results.
+
+
+                    if p<alpha (ststistically significant)(if p value is less than 0.05 then it is not null hypothesis)The goal of the statistical test is to try to Reject the Null Hypothesis, which states there's no observable change or behaviour
+Null Hypothesis Example
+Here is a simple example: A school principal reports that students in her school score an average of 7 out of 10 in exams. The null hypothesis is that the population mean is 7.0. To test this null hypothesis, we record marks of say 30 students (sample) from the entire student population of the school (say 300) and calculate the mean of that sample. We can then compare the (calculated) sample mean to the (claimed) population mean of 7.0 and attempt to reject the null hypothesis. (The null hypothesis that the population mean is 7.0 cannot be proven using the sample data; it can only be rejected.)
+
+Take another example: The annual return of a particular mutual fund is claimed to be 8%. Assume that mutual fund has been in existence for 20 years. The null hypothesis is that the mean return is 8% for the mutual fund. We take a random sample of annual returns of the mutual fund for, say, five years (sample) and calculate the sample mean. We then compare the (calculated) sample mean to the (claimed) population mean (8%) to  test the null hypothesis.
+
+For the above examples, null hypotheses are:
+
+Example A: Students in the school score an average of 7 out of 10 in exams.
+Example B: Mean annual return of the mutual fund is 8% per annum.
+For the purposes of determining whether to reject the null hypothesis, the null hypothesis (abbreviated H0) is assumed, for the sake of argument, to be true. Then the likely range of possible values of the calculated statistic (e.g., average score on 30 students’ tests) is determined under this presumption (e.g., the range of plausible averages may range from 6.2 to 7.8 if the population mean is 7.0). Then, if the sample average is outside of this range, the null hypothesis is rejected. Otherwise, the difference is said to be “explainable by chance alone,” being within the range that is determined by chance alone.
+
+An important point to note is that we are testing the null hypothesis because there is an element of doubt about its validity. Whatever information that is against the stated null hypothesis is captured in the Alternative Hypothesis (H1). For the above examples, the alternative hypothesis would be:
+
+Students score an average that is not equal to 7.
+The mean annual return of the mutual fund is not equal to 8% per annum.
+In other words, the alternative hypothesis is a direct contradiction of the null hypothesis.
+
+Hypothesis Testing for Investments
+As an example related to financial markets, assume Alice sees that her investment strategy produces higher average returns than simply buying and holding a stock. The null hypothesis states that there is no difference between the two average returns, and Alice is inclined to believe this until she proves otherwise. Refuting the null hypothesis would require showing statistical significance, which can be found using a variety of tests. The alternative hypothesis would state that the investment strategy has a higher average return than a traditional buy-and-hold strategy.
+
+The p-value is used to determine the statistical significance of the results. A p-value that is less than or equal to 0.05 is often used to indicate whether there is evidence against the null hypothesis. If Alice conducts one of these tests, such as a test using the normal model, and proves that the difference between her returns and the buy-and-hold returns is significant (p-value is less than or equal to 0.05), she can then refute the null hypothesis and conclude the alternative hypothesis.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+chance alone=there is no real way to predict the value

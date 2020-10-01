@@ -1,0 +1,79 @@
+
+What is Backward Elimination?
+Backward elimination is a feature selection technique while building a machine learning model. It is used to remove those features that do not have a significant effect on the dependent variable or prediction of output. There are various ways to build a model in Machine Learning, which are:
+
+All-in
+Backward Elimination
+Forward Selection
+Bidirectional Elimination
+Score Comparison
+Above are the possible methods for building the model in Machine learning, but we will only use here the Backward Elimination process as it is the fastest method.
+
+Steps of Backward Elimination
+Below are some main steps which are used to apply backward elimination process:
+
+
+Step-1: Firstly, We need to select a significance level to stay in the model. (SL=0.05)
+
+Step-2: Fit the complete model with all possible predictors/independent variables.
+
+Step-3: Choose the predictor which has the highest P-value, such that.
+
+If P-value >SL, go to step 4.
+Else Finish, and Our model is ready.
+Step-4: Remove that predictor.
+
+Step-5: Rebuild and fit the model with the remaining variables.
+
+Need for Backward Elimination: An optimal Multiple Linear Regression model:
+In the previous chapter, we discussed and successfully created our Multiple Linear Regression model, where we took 4 independent variables (R&D spend, Administration spend, Marketing spend, and state (dummy variables)) and one dependent variable (Profit). But that model is not optimal, as we have included all the independent variables and do not know which independent model is most affecting and which one is the least affecting for the prediction.
+
+Unnecessary features increase the complexity of the model. Hence it is good to have only the most significant features and keep our model simple to get the better result.
+
+So, in order to optimize the performance of the model, we will use the Backward Elimination method. This process is used to optimize the performance of the MLR model as it will only include the most affecting feature and remove the least affecting feature. Let's start to apply it to our MLR model.
+
+Steps for Backward Elimination method:
+We will use the same model which we build in the previous chapter of MLR. Below is the complete code for it:
+
+# importing libraries  
+import numpy as nm  
+import matplotlib.pyplot as mtp  
+import pandas as pd  
+  
+#importing datasets  
+data_set= pd.read_csv('50_CompList.csv')  
+  
+#Extracting Independent and dependent Variable  
+x= data_set.iloc[:, :-1].values  
+y= data_set.iloc[:, 4].values  
+  
+#Catgorical data  
+from sklearn.preprocessing import LabelEncoder, OneHotEncoder  
+labelencoder_x= LabelEncoder()  
+x[:, 3]= labelencoder_x.fit_transform(x[:,3])  
+onehotencoder= OneHotEncoder(categorical_features= [3])    
+x= onehotencoder.fit_transform(x).toarray()  
+  
+#Avoiding the dummy variable trap:  
+x = x[:, 1:]  
+  
+  
+# Splitting the dataset into training and test set.  
+from sklearn.model_selection import train_test_split  
+x_train, x_test, y_train, y_test= train_test_split(x, y, test_size= 0.2, random_state=0)  
+  
+#Fitting the MLR model to the training set:  
+from sklearn.linear_model import LinearRegression  
+regressor= LinearRegression()  
+regressor.fit(x_train, y_train)  
+  
+#Predicting the Test set result;  
+y_pred= regressor.predict(x_test)  
+  
+#Checking the score  
+print('Train Score: ', regressor.score(x_train, y_train))  
+print('Test Score: ', regressor.score(x_test, y_test))  
+From the above code, we got training and test set result as:
+
+Train Score:  0.9501847627493607
+Test Score:  0.9347068473282446

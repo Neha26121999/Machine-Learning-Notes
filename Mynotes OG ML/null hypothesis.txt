@@ -1,0 +1,17 @@
+Hypothesis:
+  a theory or guess can also be called a hypothesis. A hypothesis is something more than a wild guess but less than a well-established theory.(it is a claim)
+
+There are two types of hypothesis:
+1)Null Hypothesis: 
+                 if p value>0.5(accept null) it is statistically insignificant.means it have nothing to prove.and the results we have obtain could be explain by random variance...p_value<0.5 (reject null)
+what is p Value:
+         the probability of seeing the effect(E) when the null hypothesis is true.P value is a statistical measure that helps scientists determine whether or not their hypotheses are correc
+But how low is ‘low enough’ for rejecting the null hypothesis?
+This level of ‘low enough’ cutoff is called the alpha level, and you need to decide it before conducting a statistical test.en the p-value is low enough, we reject the null hypothesis and conclude the observed effect holds.
+2)Alpha Level:
+   It is the cutoff probability for p-value to establish statistical significance for a given hypothesis test.
+For an observed effect to be considered as statistically significant, the p-value of the test should be lower than the pre-decided alpha value.
+
+Typically for most statistical tests(but not always), alpha is set as 0.05.
+
+2)Alternative Hypothesis (H1, read “H one”): states the opposite of the Null Hypothesis. That there was some change, or observed relationship between what you are comparing

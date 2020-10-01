@@ -1,0 +1,43 @@
+In statistics and machine learning we usually split our data into two subsets: 
+training data and testing data (and sometimes to three: train, validate and test), and fit our model on the train data, in order to make predictions on the test data. 
+                          When we do that, one of two thing might happen: we overfit our model or we underfit our model. We don’t want any of these things to happen, because they affect the predictability of our model — we might be using a model that has lower accuracy and/or is ungeneralized (meaning you can’t generalize your predictions on other data). Let’s see what under and overfitting actually mean:
+
+1)Overfitting: Overfitting means that model we trained has trained “too well” and is now, well, fit too closely to the training dataset. This usually happens when the model is too complex (i.e. too many features/variables compared to the number of observations). This model will be very accurate on the training data but will probably be very not accurate on untrained or new data. It is because this model is not generalized (or not AS generalized), meaning you can generalize the results and can’t make any inferences on other data, which is, ultimately, what you are trying to do. Basically, 
+        when this happens, the model learns or describes the “noise” in the training data instead of the actual relationships between variables in the data. This noise(error in the data), obviously, isn’t part in of any new dataset, and cannot be applied to it.
+
+2) Underfitting:
+                  In contrast to overfitting, when a model is underfitted, it means that the model does not fit the training data and therefore misses the trends in the data. It also means the model cannot be generalized to new data. As you probably guessed (or figured out!), this is usually the result of a very simple model (not enough predictors/independent variables).
+         It could also happen when, for example, we fit a linear model (like linear regression) to data that is not linear. It almost goes without saying that this model will have poor predictive ability (on training data and can’t be generalized to other data).
+
+
+3)Train/Test Split:
+                     the data we use is usually split into training data and test data. The training set contains a known output and the model learns on this data in order to be generalized to other data later on. We have the test dataset (or subset) in order to test our model’s prediction on this subset.
+these are following steps for doing this.....
+1.import the libraries
+                
+ Pandas — to load the data file as a Pandas data frame and analyze the data. If you want to read more on Pandas, feel free to check out my post!
+From Sklearn, I’ve imported the datasets module, so I can load a sample dataset, and the linear_model, so I can run a linear regression
+From Sklearn, sub-library model_selection, I’ve imported the train_test_split so I can, well, split to training and test sets
+From Matplotlib I’ve imported pyplot in order to plot graphs of the data
+
+2.importing the dataset
+
+3.Now we can use the train_test_split function in order to make the split. The test_size=0.2 inside the function indicates the percentage of the data that should be held over for testing. It’s usually around 80/20 or 70/30.
+4.Now we’ll fit the model on the training data:
+# fit a model
+lm = linear_model.LinearRegression()
+model = lm.fit(X_train, y_train)
+predictions = lm.predict(X_test)
+
+5.
+But train/test split does have its dangers — what if the split we make isn’t random? What if one subset of our data has only people from a certain state, employees with a certain income level but not other income levels, only women or only people at a certain age? (imagine a file ordered by one of these). This will result in overfitting, even though we’re trying to avoid it! This is where cross validation comes in.
+
+
+
+
+
+
+
+
+
+

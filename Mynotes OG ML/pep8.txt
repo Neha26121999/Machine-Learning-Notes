@@ -1,0 +1,4 @@
+PEP 8 is Python's style guide. It's a set of rules for how to format your Python code to maximize its readability. Writing code to a specification helps to make large code bases, with lots of writers, more uniform and predictable, too. ... PEP is actually an acronym that stands for Python Enhancement Proposal.
+
+
+PEPs are Python Enhancement Proposals, and they describe and document the way python language evolves. They also provide a reference point (and a standard) for the pythonic way to write code. The PEP8 is the Style Guide for Python Code, and it covers: formatting.

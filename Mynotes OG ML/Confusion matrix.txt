@@ -1,0 +1,44 @@
+1)What is Confusion Matrix and why you need it?
+      it is a performance measurement for machine learning classification problem where output can be two or more classes. It is a table with 4 different combinations of predicted and actual values.
+It is extremely useful for measuring Recall, Precision, Specificity, Accuracy and most importantly AUC-ROC Curve.
+Let’s understand TP, FP, FN, TN in terms of pregnancy analogy.
+
+2)True Positive:
+Interpretation: You predicted positive and it’s true.
+You predicted that a woman is pregnant and she actually is.
+3)True Negative:
+Interpretation: You predicted negative and it’s true.
+You predicted that a man is not pregnant and he actually is not.
+4)False Positive: (Type 1 Error)
+    Interpretation: You predicted positive and it’s false.
+   You predicted that a man is pregnant but he actually is not.
+5)False Negative: (Type 2 Error)
+    Interpretation: You predicted negative and it’s false.
+   You predicted that a woman is not pregnant but she actually is.
+   Just Remember, We describe predicted values as Positive and Negative and actual values as True and False.
+
+How to Calculate Confusion Matrix for a 2-class classification problem?
+Let’s understand confusion matrix through math.
+
+
+6)Recall
+
+Recall can be defined as the ratio of the total number of correctly classified positive examples divide to the total number of positive examples. High Recall indicates the class is correctly recognized (a small number of FN).
+                     Recall=TP/Actual Yess
+
+7)Precision:
+
+To get the value of precision we divide the total number of correctly classified positive examples by the total number of predicted positive examples. High Precision indicates an example labelled as positive is indeed positive (a small number of FP).
+                      Precision=TP/Predicted yess
+
+8)High recall, low precision: This means that most of the positive examples are correctly recognized (low FN) but there are a lot of false positives.
+
+9)Low recall, high precision: This shows that we miss a lot of positive examples (high FN) but those we predict as positive are indeed positive (low FP)
+
+10)F-measure:
+Since we have two measures (Precision and Recall) it helps to have a measurement that represents both of them. We calculate an F-measure which uses Harmonic Mean in place of Arithmetic Mean as it punishes the extreme values more
+
+It is difficult to compare two models with low precision and high recall or vice versa. So to make them comparable, we use F-Score. F-score helps to measure Recall and Precision at the same time. It uses Harmonic Mean in place of Arithmetic Mean by punishing the extreme values 
+The F-Measure will always be nearer to the smaller value of Precision or Recall.
+                  F-Measure=2*Recall*Precision/Recall+Precision
+

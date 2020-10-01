@@ -1,0 +1,37 @@
+1. What is SVM?
+Support vector machines so called as SVM is a supervised learning algorithm which can be used for classification and regression problems as support vector classification (SVC) and support vector regression (SVR). It is used for smaller dataset as it takes too long to process. In this set, we will be focusing on SVC.
+
+2. The ideology behind SVM:
+SVM is based on the idea of finding a hyperplane that best separates the features into different domains.
+
+4. Terminologies used in SVM:
+The points closest to the hyperplane are called as the support vector points and the distance of the vectors from the hyperplane are called the margins.
+
+The basic intuition to develop over here is that more the farther SV points, from the hyperplane, more is the probability of correctly classifying the points in their respective region or classes. SV points are very critical in determining the hyperplane because if the position of the vectors changes the hyperplane’s position is altered. Technically this hyperplane can also be called as margin maximizing hyperplane.
+
+
+5. Hyperplane(Decision surface ):
+For so long in this post we have been discussing the hyperplane, let’s justify its meaning before moving forward. The hyperplane is a function which is used to differentiate between features. In 2-D, the function used to classify between features is a line whereas, the function used to classify the features in a 3-D is called as a plane similarly the function which classifies the point in higher dimension is called as a hyperplane. Now since you know about the hyperplane lets move back to SVM.
+
+So we can see that if the points are linearly separable then only our hyperplane is able to distinguish between them and if any outlier is introduced then it is not able to separate them. So these type of SVM is called as hard margin SVM (since we have very strict constraints to correctly classify each and every datapoint).
+
+
+
+12. Pros and cons of SVM:
+Pros:
+It is really effective in the higher dimension.
+Effective when the number of features are more than training examples.
+Best algorithm when classes are separable
+The hyperplane is affected by only the support vectors thus outliers have less impact.
+SVM is suited for extreme case binary classification.
+cons:
+For larger dataset, it requires a large amount of time to process.
+Does not perform well in case of overlapped classes.
+Selecting, appropriately hyperparameters of the SVM that will allow for sufficient generalization performance.
+Selecting the appropriate kernel function can be tricky.
+13. Preparing data for SVM:
+1. Numerical Conversion:
+SVM assumes that you have inputs are numerical instead of categorical. So you can convert them using one of the most commonly used “one hot encoding , label-encoding etc”.
+2. Binary Conversion:
+Since SVM is able to classify only binary data so you would need to convert the multi-dimensional dataset into binary form using (one vs the rest method / one vs one method) conversion method.
+

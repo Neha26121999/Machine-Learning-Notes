@@ -1,0 +1,51 @@
+A decision tree is a graph that uses a branching method to illustrate every possible outcome of a decision. ... Programmatically, they can be used to assign monetary/time or other values to possible outcomes so that decisions can be automated.
+Decision tree learning is a supervised machine learning technique for inducing a decision tree from training data. A decision tree (also referred to as a classification tree or a reduction tree) is a predictive model which is a mapping from observations about an item to conclusions about its target value.
+
+Types of Decision trees:
+There are two main types of decision trees that are based on the target variable, i.e., categorical variable decision trees and continuous variable decision trees.
+Decision trees would not give the best predictions for simple datset(only one feature) but still we will use it because this algorithm work on multi number of features...It is one way to display an algorithm that only contains conditional control statements.
+Decision Tree is a very popular machine learning algorithm. Decision Tree solves the problem of machine learning by transforming the data into tree representation. Each internal node of the tree representation denotes an attribute and each leaf node denotes a class label.
+In this algorithm we will not use feature scaling
+
+
+Advantages:
+1)Compared to other algorithms decision trees requires less effort for data preparation during pre-processing.
+A decision tree does not require normalization of data.
+2)A decision tree does not require scaling of data as well.
+3)Missing values in the data also does NOT affect the process of building decision tree to any considerable extent.
+4)A Decision trees model is very intuitive and easy to explain to technical teams as well as stakeholders.
+
+Disadvantage:
+1)A small change in the data can cause a large change in the structure of the decision tree causing instability.
+2)For a Decision tree sometimes calculation can go far more complex compared to other algorithms.
+3)Decision tree often involves higher time to train the model.
+4)Decision tree training is relatively expensive as complexity and time taken is more.
+5)Decision Tree algorithm is inadequate for applying regression and predicting continuous values.
+
+There are several approaches to avoiding overfitting in building decision trees.
+1)Pre-pruning that stop growing the tree earlier, before it perfectly classifies the training set.
+2)Post-pruning that allows the tree to perfectly classify the training set, and then post prune the tree.
+
+Accuracy:
+
+You should perform a cross validation if you want to check the accuracy of your system. You have to split you data set into two parts. The first one is used to learn your system. Then you perform the prediction process on the second part of the data set and compared the predicted results with the good ones.
+
+Over-fitting:
+          is the phenomenon in which the learning system tightly fits the given training data so much that it would be inaccurate in predicting the outcomes of the untrained data. In decision trees, over-fitting occurs when the tree is designed so as to perfectly fit all samples in the training data set.
+
+
+Entropy:
+Decision Tree Algorithm choose the highest Information gain to split/construct a Decision Tree. So we need to check all the feature in order to split the Tree. The entropy of left and right child nodes are same because they contains same classes. entropy(bumpy) and entropy(smooth) both equals to 1 .
+
+LR vs Decision tree:
+Decision trees supports non linearity, where LR supports only linear solutions.
+When there are large number of features with less data-sets(with low noise), linear regressions may outperform Decision trees/random forests. In general cases, Decision trees will be having better average accuracy.
+For categorical independent variables, decision trees are better than linear regression.
+Decision trees handles colinearity better than LR.
+
+Colinearity & Outliers :
+Two features are said to be colinear when one feature can be linearly predicted from the other with somewhat accuracy.
+colinearity will simply inflate the standard error and causes some significant features to become insignificant during training. Ideally, we should calculate the colinearity prior to training and keep only one feature from highly correlated feature sets.
+Outlier is another challenge faced during training. They are data-points that are extreme to normal observations and affects the accuracy of the model.
+outliers inflates the error functions and affects the curve function and accuracy of the linear regression. Regularization (especially L1 ) can correct the outliers, by not allowing the θ parameters to change violently.
+During Exploratory data analysis phase itself, we should take care of outliers and correct/eliminate them. Box-plot can be used for identifying them.

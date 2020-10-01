@@ -1,0 +1,59 @@
+An antecedent is an item found within the data. ... Support is an indication of how frequently the items appear in the data.
+
+ Confidence indicates the number of times the if-then statements are found true. A third metric, called lift, can be used to compare confidence with expected confidence.
+
+Support: is the percentage of transactions in T that contain both wine and Cheese together. (9% of all baskets had these 2 items together.) Confidence: is the percentage of transactions in T, containing wine, that also contain Cheese.
+Association Rule Mining
+Association rules can be thought of as an IF-THEN relationship. Suppose item A is being bought by the customer, then the chances of item B being picked by the customer too under the same Transaction ID is found out.
+
+association-rules-apriori-algorithm
+
+ 
+
+There are two elements of these rules:
+
+Antecedent (IF): This is an item/group of items that are typically found in the Itemsets or Datasets.
+
+Consequent (THEN): This comes along as an item with an Antecedent/group of Antecedents.
+
+But here comes a constraint. Suppose you made a rule about an item, you still have around 9999 items to consider for rule-making. This is where the Apriori Algorithm comes into play. So before we understand the Apriori Algorithm, let’s understand the math behind it. There are 3 ways to measure association:
+
+Support
+Confidence
+Lift
+ 
+
+Support: It gives the fraction of transactions which contains item A and B. Basically Support tells us about the frequently bought items or the combination of items bought frequently.
+
+support-apriori
+
+So with this, we can filter out the items that have a low frequency.
+
+ 
+
+Confidence: It tells us how often the items A and B occur together, given the number times A occurs.
+
+confidence-apriori
+
+ 
+
+Typically, when you work with the Apriori Algorithm, you define these terms accordingly. But how do you decide the value? Honestly, there isn’t a way to define these terms. Suppose you’ve assigned the support value as 2. What this means is, until and unless the item/s frequency is not 2%, you will not consider that item/s for the Apriori algorithm. This makes sense as considering items that are bought less frequently is a waste of time.
+
+ 
+
+Now suppose, after filtering you still have around 5000 items left. Creating association rules for them is a practically impossible task for anyone. This is where the concept of lift comes into play.
+
+ 
+
+Lift: Lift indicates the strength of a rule over the random occurrence of A and B. It basically tells us the strength of any rule.
+
+lift-apriori-algorithm
+
+ 
+
+Focus on the denominator, it is the probability of the individual support values of A and B and not together. Lift explains the strength of a rule. More the Lift more is the strength. Let’s say for A -> B, the lift value is 4. It means that if you buy A the chances of buying B is 4 times. Let’s get started with the Apriori Algorithm now and see how it works.
+
+ 
+
+Apriori Algorithm
+Apriori algorithm uses frequent itemsets to generate association rules. It is based on the concept that a subset of a frequent itemset must also be a frequent itemset. Frequent Itemset is an itemset whose support value is greater than a threshold value(support).

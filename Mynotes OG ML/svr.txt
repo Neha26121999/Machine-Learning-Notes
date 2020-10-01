@@ -1,0 +1,1 @@
+SVM, which stands for Support Vector Machine, is a classifier. Classifiers perform classification, predicting discrete categorical labels. SVR, which stands for Support Vector Regressor, is a regressor. Regressors perform regression, predicting continuous ordered variables. Both use very similar algorithms, but predict different types of variables.

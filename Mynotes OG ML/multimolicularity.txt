@@ -1,0 +1,30 @@
+1)Definition
+Multicollinearity is a phenomenon in which one independent variable is highly correlated with one or more of the other independent variables in a multiple regression equation. In other words, one independent variable can be linearly predicted from one or multiple other independent variables with a substantial degree of certainty.
+Identifying Multicollinearity
+There are a few different ways to detect multicollinearity in your data.
+1. Variance Inflation Factor (VIF): The VIF assesses how much the variance of an estimated regression coefficient increases if your predictors are correlated. If there is no correlation the VIF will be 1. So the larger the number the more correlated the two variables are.
+2. Heat maps: You can build a correlation matrix with a color gradient background and look at how the data correlates with each other. This scale will be from 0–1 with 1 being perfectly correlated.
+There are a few other techniques you can leverage to identify multicollinearity, but the two listed above are great options.
+Example
+Now that we have an understanding of multicollinearity let’s make use of some data to visualize the rest of the article. First, let’s make a correlation heat map to see if we can find any correlation between our independent variables
+
+Correlation Heat Map
+Here we can see that we have a high correlation between variables x5 and x6. There isn’t a hard rule on what threshold is considered to be too much correlation, but it is common practice that anything at or above .5 should be explored. Given that the correlation between x5 and x6 is .8 It is safe to assume that multicollinearity is present.
+Fixing Multicollinearity
+
+Solutions to multicollinearity will vary from dataset to dataset so be aware that the solutions I am going to provide are a good general rule of thumb or guideline, but be sure to do the proper exploratory data analysis before you decide how to address your data issues.
+
+1. Feature Engineer: If you can find a way to aggregate or combine the two features and turn it into one variable you will no longer have to deal with the high correlation between the two variables as they will be one.
+
+2. Drop One: It is common to drop one of the variables that are too highly correlated with another. If you do not need the feature it can be safe to just drop one of the variables. Which one should you drop? Well, that will depend on your data but a good general rule is to drop the one that isn’t as strongly correlated with the target variable
+The Problem with Multicollinearity
+
+Multicollinearity undermines the statistical significance of an independent variable. Here it is important to point out that multicollinearity does not affect the model’s predictive accuracy. The model should still do a relatively decent job predicting the target variable when multicollinearity is present. Now, I know what you are thinking. “If it does not affect the model’s ability to predict my target why should I be concerned?” While multicollinearity should not have a major impact on the model’s accuracy, it does affect the variance associated with the prediction, as well as, reducing the quality of the interpretation of the independent variables. In other words, the effect your data has on the model isn’t trustworthy. Your explanation of how the model takes the inputs to produce the output will not be reliable.
+Let’s visit our data set one more time to visualize the problem.
+
+Feature Coefficients with all variables present
+
+Feature Coefficients after removing Multicollinearity
+You can see after I drop one of the variables (the one least correlated with the target) that the coefficients do in fact change.
+4)Conclusion
+While multicollinearity won’t affect your prediction it will affect your interpretation of how you got there. It is worth spending a little more attention during your exploratory data analysis to uncover and address multicollinearity, so when people ask a question about your predictions you can have confidence in your explanation.

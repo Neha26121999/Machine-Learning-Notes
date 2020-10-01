@@ -1,0 +1,25 @@
+1)What is a classifier?
+A classifier is a machine learning model that is used to discriminate different objects based on certain features.
+Principle of Naive Bayes Classifier:
+A Naive Bayes classifier is a probabilistic machine learning model that’s used for classification task. The crux of the classifier is based on the Bayes theorem.
+
+
+2)Bayes Theorem:
+
+Using Bayes theorem, we can find the probability of A happening, given that B has occurred. Here, B is the evidence and A is the hypothesis. The assumption made here is that the predictors/features are independent. That is presence of one particular feature does not affect the other. Hence it is called naive.
+
+Using the above function, we can obtain the class, given the predictors.
+3)Types of Naive Bayes Classifier:
+1)Multinomial Naive Bayes:
+This is mostly used for document classification problem, i.e whether a document belongs to the category of sports, politics, technology etc. The features/predictors used by the classifier are the frequency of the words present in the document.
+
+2)Bernoulli Naive Bayes:
+This is similar to the multinomial naive bayes but the predictors are boolean variables. The parameters that we use to predict the class variable take up only values yes or no, for example if a word occurs in the text or not.
+
+3)Gaussian Naive Bayes:
+When the predictors take up a continuous value and are not discrete, we assume that these values are sampled from a gaussian distribution.
+Gaussian Distribution(Normal Distribution)
+Since the way the values are present in the dataset changes, the formula for conditional probability changes to,
+
+Conclusion:
+Naive Bayes algorithms are mostly used in sentiment analysis, spam filtering, recommendation systems etc. They are fast and easy to implement but their biggest disadvantage is that the requirement of predictors to be independent. In most of the real life cases, the predictors are dependent, this hinders the performance of the classifier.

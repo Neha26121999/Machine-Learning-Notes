@@ -1,0 +1,26 @@
+The developers of the library might have realised that people use LabelEncoding and OneHotEncoding very frequently. So they decided to come up with a new library called the ColumnTransformer, which will basically combine LabelEncoding and OneHotEncoding into just one line of code. And the result is exactly the same. In this post, we’ll quickly take a look at how we can do that with some code snippets.
+
+The Code
+First, as usual, we need to import the required libraries. We’ll go with the convention here for the aliasing:
+import numpy as np
+import pandas as pd
+Next, let’s get some data into a variable and see what we’re working with:
+dataset = pd.read_csv("/home/sunny/code/machine_learning/samples/sample.csv")
+You can use the “Variable explorer” view in Spyder to take a look at the data. In my case, it’s something like the following:
+
+As you can clearly make out, the data makes no sense and is clearly just for this demonstration. Anyway, the first column we have here is a text field, and is categorical in a sense. So we’ll have to label encode this and also one hot encode to be sure we’ll not be working with any hierarchy. For this, we’ll still need the OneHotEncoder library to be imported in our code. But instead of the LabelEncoder library, we’ll use the new ColumnTransformer. So let’s import these two first:
+from sklearn.preprocessing import OneHotEncoder
+from sklearn.compose import ColumnTransformer
+Next, we have to create an object of the ColumnTransformer class. But before we can do that, we need to understand the constructor signature of the class. The ColumnTransformer constructor takes quite a few arguments, but we’re only interested in two. The first argument is an array called transformers, which is a list of tuples. The array has the following elements in the same order:
+name: a name for the column transformer, which will make setting of parameters and searching of the transformer easy.
+transformer: here we’re supposed to provide an estimator. We can also just “passthrough” or “drop” if we want. But since we’re encoding the data in this example, we’ll use the OneHotEncoder here. Remember that the estimator you use here needs to support fit and transform.
+column(s): the list of columns which you want to be transformed. In this case, we’ll only transform the first column.
+The second parameter we’re interested in is the remainder. This will tell the transformer what to do with the other columns in the dataset. By default, only the columns which are transformed will be returned by the transformer. All other columns will be dropped. But we have the option to tell the transformer what to do with the other columns. We can either drop them, pass them through unchanged, or specify another estimator if we want to do some more processing.
+Now that we (somewhat) understand the signature of the constructor, let’s go ahead and create an object:
+columnTransformer = ColumnTransformer([('encoder', OneHotEncoder(), [0])], remainder='passthrough')
+As you can see from the snippet above, we’ll name the transformer simply “encoder.” We’re using the OneHotEncoder() constructor to provide a new instance as the estimator. And then we’re specifying that only the first column has to be transformed. We’re also making sure that the remainder columns are passed through without any changes.
+Once we have constructed this columnTransformer object, we have to fit and transform the dataset to label encode and one hot encode the column. For this, we’ll use the following simple command:
+dataset = np.array(columnTransformer.fit_transform(dataset), dtype = np.str)
+If you check your dataset now in the Variable explorer view, you should see something similar to this:
+
+As you can see, we have easily label encoded and one hot encoded a column in our dataset using only the ColumnTransformer class. This so much more easier and cleaner than using both LabelEncoder and OneHotEncoder classes.
